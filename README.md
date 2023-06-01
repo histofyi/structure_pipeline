@@ -13,6 +13,9 @@ To run the repository should also include a config file (config.toml). This file
 The following variables are set in the config.toml file:
 
 INPUT_PATH
+
 OUTPUT_PATH
+
 ASSET_PATH
+
 LOGS_PATH
