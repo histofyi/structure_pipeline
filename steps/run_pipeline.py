@@ -10,19 +10,14 @@ import toml
 
 def run_pipeline(**kwargs) -> Dict:
     pipeline = Pipeline()
+    pipeline.load_steps(steps)
 
-    kwargs = pipeline.parse_cli_args()
-
-    print (kwargs)
-    pipeline.say_hello()
-
-
+    pipeline.run_step('1')
+    pipeline.run_step('2')
+    
 def main():
 
-    
-
     output = run_pipeline()
-
 
 if __name__ == '__main__':
     main()
