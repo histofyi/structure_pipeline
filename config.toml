@@ -1,0 +1,5 @@
+MODULES=["PATHS","CONSTANTS","SECRETS","DEPENDENCIES"]
+PATHS="paths.toml"
+CONSTANTS="constants.toml"
+SECRETS="secrets.toml"
+DEPENDENCIES="dependencies.toml"
