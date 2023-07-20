@@ -1,3 +1,2 @@
-"DEPENDENCIES" = ["CONDA","PIP"]
 "CONDA" = "requirements.yaml"
 "PIP" = "requirements.txt"
