@@ -164,5 +164,6 @@ input/*
 output/*
 logs/*
 
-# Config, which may later contain secrets
-config.toml
+# Config files, which may later contain secrets or local paths
+secrets.toml
+paths.toml
