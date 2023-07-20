@@ -1,5 +1,6 @@
-MODULES=["PATHS","CONSTANTS","SECRETS","DEPENDENCIES"]
+MODULES=["PATHS","CONSTANTS","SECRETS","DEPENDENCIES","ARGPARSE"]
 PATHS="paths.toml"
 CONSTANTS="constants.toml"
 SECRETS="secrets.toml"
 DEPENDENCIES="dependencies.toml"
+ARGPARSE="arguments.toml"
