@@ -6,16 +6,24 @@ It's a refactoring/reworking of the existing pipeline, with the specific aim of 
 
 ## Files/folders required but not part of this repository
 
-The repository is designed to work with the warehouse respository structure, but can also be set up to use local directories for input, output and logs which should be put in the root folder of the repository.
+## Project setup
 
-To run the repository should also include a config file (config.toml). This file is not part of the repository as it may at some point contain secrets for cloud services.
+The project relies on a conda environment so that steps involving the pymol can be run. Pymol is quite picky about python version and pymol version for the conda install. The following are known to work on some machines. 
 
-The following variables are set in the config.toml file:
+```sh
+conda create --name envionmentname python=3.8.8
+conda activate envionmentname
+```
 
-INPUT_PATH
+Pip needs upgrading to a recent version if editable packages are needed
 
-OUTPUT_PATH
+```sh
+conda install pip
+```
 
-ASSET_PATH
+Pymol can then be installed through conda. Version 2.5.5 is known to work with Python 3.8.8 in a conda environment.
 
-LOGS_PATH
+```sh
+conda install -c schrodinger pymol
+```
+
