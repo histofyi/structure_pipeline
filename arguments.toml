@@ -1,0 +1,38 @@
+"prog" = "Structure Pipeline"
+"description" = "This pipeline builds a dataset of information about 3D structures."
+"epilog" = "For more information see - https = //github.com/histofyi/structure_pipeline"
+
+[arguments.verbose]
+"flag" = "v"
+"variable_name" = "verbose"
+"help" = "increases output verbosity (non-verbosity is the default)"
+"action" = "store_true"
+"default" = false
+
+[arguments.force]
+"flag" = "f"
+"variable_name" = "force"
+"help" = "forces reloading of underlying datasets (not forcing reload is the default)"
+"action" = "store_true"
+"default" = false
+
+[arguments.release]
+"flag" = "r"
+"variable_name" = "release"
+"help" = "switch between development and release modes (development mode is the default)"
+"action" = "store_true"
+"default" = false
+
+[arguments.all_data]
+"flag" = "a"
+"variable_name" = "all_data"
+"help" = "whether all data should be processed or only new structures"
+"action" = "store_true"
+"default" = false
+
+[arguments.mhc_class]
+"flag" = "m"
+"variable_name" = "mhc_class"
+"help" = "switch the pipeline between MHC Class I and Class II currently only Class I to which it defaults"
+"action" = "store"
+"default" = "class_i"
