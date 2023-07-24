@@ -162,7 +162,7 @@ cython_debug/
 # Local temp directories
 input/*
 output/*
-logs/*
+log/*
 
 # Config files, which may later contain secrets or local paths
 secrets.toml
