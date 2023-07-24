@@ -1,4 +1,3 @@
-from test_step import test_step
 from update_localpdb import update_localpdb
 
 steps = {
