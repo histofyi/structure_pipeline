@@ -11,10 +11,12 @@ dparse==0.6.3
 gitdb==4.0.10
 GitPython==3.1.32
 h5py @ file:///tmp/abs_4aewd3wzey/croots/recipe/h5py_1659091371897/work
+-e git+https://github.com/histofyi/helpers.git@eab2a6b79c7e2c85396f80259b4731c040b4fdc3#egg=helpers
 humanfriendly==10.0
 idna @ file:///croot/idna_1666125576474/work
 Jinja2==3.1.2
 localpdb==0.2.7
+lxml==4.9.3
 markdown-it-py==3.0.0
 MarkupSafe==2.1.3
 mdurl==0.1.2
@@ -25,7 +27,7 @@ numpy @ file:///croot/numpy_and_numpy_base_1682520569166/work
 packaging @ file:///croot/packaging_1678965309396/work
 pandas==1.5.3
 Pillow==9.4.0
--e git+https://github.com/histofyi/pipeline.git@032b44f6afb4a1bc3325d995d51a7652402ee6d0#egg=pipeline
+-e git+https://github.com/histofyi/pipeline.git@f149fc23d9bbe64bb7c52359c88e622d758f89c5#egg=pipeline
 ply==3.11
 pyaml==20.4.0
 pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
