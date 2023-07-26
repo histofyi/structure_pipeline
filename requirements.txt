@@ -8,13 +8,15 @@ charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654
 coloredlogs==15.0.1
 cryptography @ file:///croot/cryptography_1677533068310/work
 dparse==0.6.3
+fuzzywuzzy==0.18.0
 gitdb==4.0.10
 GitPython==3.1.32
 h5py @ file:///tmp/abs_4aewd3wzey/croots/recipe/h5py_1659091371897/work
--e git+https://github.com/histofyi/helpers.git@eab2a6b79c7e2c85396f80259b4731c040b4fdc3#egg=helpers
+-e git+https://github.com/histofyi/helpers.git@f91280dd50f3c5134b4b4856b25e041e44957217#egg=helpers
 humanfriendly==10.0
 idna @ file:///croot/idna_1666125576474/work
 Jinja2==3.1.2
+Levenshtein==0.21.1
 localpdb==0.2.7
 lxml==4.9.3
 markdown-it-py==3.0.0
@@ -27,7 +29,7 @@ numpy @ file:///croot/numpy_and_numpy_base_1682520569166/work
 packaging @ file:///croot/packaging_1678965309396/work
 pandas==1.5.3
 Pillow==9.4.0
--e git+https://github.com/histofyi/pipeline.git@f149fc23d9bbe64bb7c52359c88e622d758f89c5#egg=pipeline
+-e git+https://github.com/histofyi/pipeline.git@b4a322d9683d761c2f9127d8226938596bedaf42#egg=pipeline
 ply==3.11
 pyaml==20.4.0
 pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
@@ -37,8 +39,10 @@ pyOpenSSL @ file:///croot/pyopenssl_1677607685877/work
 PyQt5-sip==12.11.0
 PySocks @ file:///tmp/build/80754af9/pysocks_1605305779399/work
 python-dateutil==2.8.2
+python-Levenshtein==0.21.1
 pytz==2023.3
 PyYAML==6.0.1
+rapidfuzz==3.1.2
 requests @ file:///croot/requests_1682607517574/work
 rich==13.4.2
 sip @ file:///tmp/abs_44cd77b_pu/croots/recipe/sip_1659012365470/work

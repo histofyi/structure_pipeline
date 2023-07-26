@@ -119,11 +119,13 @@ dependencies:
     - biopandas==0.4.1
     - coloredlogs==15.0.1
     - dparse==0.6.3
+    - fuzzywuzzy==0.18.0
     - gitdb==4.0.10
     - gitpython==3.1.32
     - helpers==0.1
     - humanfriendly==10.0
     - jinja2==3.1.2
+    - levenshtein==0.21.1
     - localpdb==0.2.7
     - lxml==4.9.3
     - markdown-it-py==3.0.0
@@ -134,8 +136,10 @@ dependencies:
     - pyaml==20.4.0
     - pygments==2.15.1
     - python-dateutil==2.8.2
+    - python-levenshtein==0.21.1
     - pytz==2023.3
     - pyyaml==6.0.1
+    - rapidfuzz==3.1.2
     - rich==13.4.2
     - smmap==5.0.0
     - soupsieve==2.4.1
