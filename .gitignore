@@ -163,6 +163,7 @@ cython_debug/
 input/*
 output/*
 log/*
+tmp/*
 
 # Config files, which may later contain secrets or local paths
 secrets.toml
