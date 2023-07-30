@@ -1,6 +1,6 @@
 from typing import Dict, List
 
-from pipeline import get_current_time, get_date_hash, create_folder
+from pipeline import get_current_time, create_folder
 
 from helpers.files import write_json
 
@@ -41,7 +41,7 @@ def parse_localpdb_output(raw_output:List) -> Dict:
     }
 
 
-def run_command(command):
+def run_command(command:str, datehash:str):
     output_log = []
     process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
     while True:
@@ -54,7 +54,7 @@ def run_command(command):
                 print (output.strip())
     tmp_output_directory = 'tmp/steps/localpdb'
     create_folder(tmp_output_directory, verbose=False)
-    write_json(f"{tmp_output_directory}/output_{get_date_hash(get_current_time())}.json", output_log, pretty=True)
+    write_json(f"{tmp_output_directory}/output_{datehash}.json", output_log, pretty=True)
     return output_log
 
 
@@ -69,11 +69,11 @@ def update_localpdb(**kwargs):
 
     config = kwargs['config']
     verbose = kwargs['verbose']
+    datehash = kwargs['datehash']
 
     update_command = f"localpdb_setup -db_path {config['PATHS']['LOCALPDB_PATH']} --update"
 
-    #result = run(update_command, capture_output=True, shell=True, text=True)
-    raw_output = run_command(update_command)
+    raw_output = run_command(update_command, datehash)
 
     parsed_output = parse_localpdb_output(raw_output)
 
