@@ -1,19 +1,39 @@
 from typing import Dict, List, Tuple
 
+import os
+
 from localpdb import PDB
 from fuzzywuzzy import fuzz
 
 from rich.progress import Progress
 
+from pipeline import create_folder
 
-from helpers.files import read_json
+from helpers.files import read_json, write_json, write_step_tmp_output
 from helpers.text import slugify
 
+from pymol import cmd
 
-class_i_starts = read_json('assets/sequences/class_i_starts.json')
-search_sequences = read_json('assets/sequences/search_sequences.json')
 
-unable_to_split = {}
+def parse_search_sequences(filename, mhc_class):
+    raw_search_sequences = read_json(filename)[mhc_class]
+    parsed_search_sequences = {mhc_class:{'labels':[],'sequences':[]}}
+    parsed_search_sequences[mhc_class]['labels'] = [k for k,v in raw_search_sequences.items()]
+    parsed_search_sequences[mhc_class]['sequences'] = [v for k,v in raw_search_sequences.items()]
+    return parsed_search_sequences
+
+
+def structure_match(pdb_code:str, mhc_class:str):
+    cmd.fetch(pdb_code, quiet=1)
+    cmd.load('assets/structures/class_i_1hhk.pdb')
+    align = cmd.cealign('class_i_1hhk',pdb_code)
+    cmd.delete('all')
+    match_likelihood = align['alignment_length'] / 180
+    fetched_file = f"{pdb_code}.cif"
+    if os.path.exists(fetched_file):
+        os.remove(fetched_file)
+    return match_likelihood
+
 
 def remove_leader_sequence(test_sequence:str, pdb_code:str):
     split_sequence = None
@@ -100,36 +120,69 @@ def match_class_i_start(test_sequence:str):
         if class_i_start[1:] in test_sequence:
             match = class_i_start[1:]
             break
+        if class_i_start[2:] in test_sequence:
+            match = class_i_start[1:]
+            break
     return match
     
 
+def fast_match():
+    pass 
+
+
+def full_match():
+    pass
+
+
+class_i_starts = read_json('assets/sequences/class_i_starts.json')
+search_sequences = parse_search_sequences('assets/sequences/search_sequences.json','class_i')
+
+unable_to_split = {}
+
+poor_matches = []
+possible_matches = []
+good_matches = []
+excellent_matches = []
+
+def add_to_matchtype(label:str, pdb_code:str, score:float, matched_to:str):
+    eval(f"{label}_matches").append({'pdb_code':pdb_code, 'score':score, 'matched_to':matched_to})
+    pass
+
 def query_localpdb(**kwargs):
+    verbose = kwargs['verbose']
     config = kwargs['config']
     console = kwargs['console']
+    datehash = kwargs['datehash']
+    function_name = kwargs['function_name']
+    output_path = kwargs['output_path']
+
+    low = 160
+    high = 500
+
+    output_folder = f"{output_path}/{function_name}"
+
+    folder_status = create_folder(output_folder, verbose)
 
     with console.status(f"Searching localpdb..."):
         lpdb = PDB(db_path=config['PATHS']['LOCALPDB_PATH'])
-        results = lpdb.chains.query(f"{160} < sequence.str.len() < {500}")
+        results = lpdb.chains.query(f"{low} <= sequence.str.len() <= {high}")
 
     console.print (f"{len(results)} possible sequences matching the length criteria")
-    possible_class_i = []
-    already_matched = []
-    start_matches = {}
-    fuzzy_matches = {}
+    
+    unique_matches = []
+    length_matches = []
 
+    start_matches = {}
     matches_used = []
 
-    match_types = {}
+    
 
-    poor_matches = []
-
-    j = 0
     with Progress() as progress:
         task = progress.add_task("[white]Processing...", total=len(results))
         for structure in results.index:
             pdb_code = results.loc[structure]['pdb'].lower()
-            if not pdb_code in already_matched:
-
+            length_matches.append(pdb_code)
+            if not pdb_code in unique_matches:
                 sequence = results.loc[structure]['sequence']
                 start_match = match_class_i_start(sequence)
 
@@ -138,40 +191,65 @@ def query_localpdb(**kwargs):
                         start_matches[start_match] = []
                     start_matches[start_match].append(pdb_code)
                     best_match, best_score, match_type, altered_sequence = match_class_i_sequences(sequence, pdb_code)
-                    if match_type not in match_types:
-                        match_types[match_type] = []
-                    match_types[match_type].append(pdb_code)
-                    if best_match:
-                        best_match_slug = slugify(best_match)
-                        if not best_match_slug in fuzzy_matches:
-                            fuzzy_matches[best_match_slug] = []
-                        fuzzy_matches[best_match_slug].append(pdb_code)
+                    
+                    best_match_slug = slugify(best_match)
 
+                    if best_score < 0.5:
+                        match_likelihood = structure_match(pdb_code, 'class_i')
+                        if match_likelihood < 0.5 and best_score < 0.4:
+                            add_to_matchtype('poor', pdb_code, best_score, best_match_slug)    
+                            print (f"Poor match for structure chain {structure} / pdb_code {pdb_code}")
+                        else:
+                            add_to_matchtype('possible', pdb_code, best_score, best_match_slug)
+                            print (f"Possible match for structure chain {structure} / pdb_code {pdb_code}")
+                        print (f"Best match is {best_match} / score {best_score}")
+                        print (f"Structure match likelihood {match_likelihood:.2f}")
+                        print (f"{len(sequence)}aa")
+                        print ('')
+                    elif best_score >= 0.9:
+                        add_to_matchtype('excellent', pdb_code, best_score, best_match_slug)
                         if not best_match in matches_used:
                             matches_used.append(best_match)
-                    if best_score < 0.7:
-                        poor_matches.append(pdb_code)
-                        print (f"Poor match for structure chain {structure} / pdb_code {pdb_code}")
-                        print (f"Best match is {best_match} / score {best_score}")
-                        print (f"{len(sequence)}aa")
-                        print (altered_sequence)
-                        print ('')
-                    j += 1
-                    possible_class_i.append(pdb_code)
-                    already_matched.append(pdb_code)
+                    else:
+                        # less than 0.9, but greater than 0.4
+                        add_to_matchtype('good', pdb_code, best_score, best_match_slug)
+                        if not best_match in matches_used:
+                            matches_used.append(best_match)
+                
+                unique_matches.append(pdb_code)
+                    
             progress.update(task, advance=1)
-            
+
+    action_log = {
+        'sequence_length_match':{'low':low,'high':high},
+        'collections': {}
+    }
+
+    collections = {}        
+    for collection in ['poor_matches', 'possible_matches', 'good_matches', 'excellent_matches', 'unique_matches', 'length_matches', 'start_matches']:
+        items = eval(collection)
+
+        collections[collection] = items
+        action_log['collections'][collection] = len(items)
+
+        console.print(f"{collection}: {len(items)}")
+
+        filename = f"{output_folder}/{collection}.json"
+        write_json(filename, items, pretty=True)
 
 
-    
-    console.print ('')
+    raw_output = {
+        'collections': collections,
+    }
 
-    console.print (f"{j} possible sequences contain a Class I start")
-    
+    write_step_tmp_output(config['PATHS']['TMP_PATH'], function_name, raw_output, datehash, verbose=verbose)
+
     missing_matches = list(set(search_sequences['class_i']['labels']).difference(set(matches_used)))
 
-    console.print (f"Matches not found {missing_matches}")
-
-    console.print (f"Number of poor matches: {len(poor_matches)}")
+    console.print (f"Match types not found {missing_matches}")
 
     console.print (f"Number of structures which can't have leader peptides removed: {len(unable_to_split)}")
+
+    console.print (action_log)
+
+    return action_log
