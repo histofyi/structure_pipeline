@@ -1,8 +1,8 @@
 from typing import Dict, List
 
-from pipeline import get_current_time, create_folder
+from pipeline import get_current_time
 
-from helpers.files import write_json
+from helpers.files import write_json, write_step_tmp_output
 
 import subprocess
 import shlex
@@ -41,7 +41,7 @@ def parse_localpdb_output(raw_output:List) -> Dict:
     }
 
 
-def run_command(command:str, datehash:str):
+def run_command(command:str):
     output_log = []
     process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
     while True:
@@ -52,9 +52,6 @@ def run_command(command:str, datehash:str):
             if len(output) > 0:
                 output_log.append(output.strip())
                 print (output.strip())
-    tmp_output_directory = 'tmp/steps/localpdb'
-    create_folder(tmp_output_directory, verbose=False)
-    write_json(f"{tmp_output_directory}/output_{datehash}.json", output_log, pretty=True)
     return output_log
 
 
@@ -70,10 +67,13 @@ def update_localpdb(**kwargs):
     config = kwargs['config']
     verbose = kwargs['verbose']
     datehash = kwargs['datehash']
+    function_name = kwargs['function_name']
 
     update_command = f"localpdb_setup -db_path {config['PATHS']['LOCALPDB_PATH']} --update"
 
-    raw_output = run_command(update_command, datehash)
+    raw_output = run_command(update_command)
+
+    write_step_tmp_output(config['PATHS']['TMP_PATH'], function_name, raw_output, datehash, verbose=verbose)
 
     parsed_output = parse_localpdb_output(raw_output)
 
