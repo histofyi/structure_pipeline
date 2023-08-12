@@ -174,18 +174,23 @@ def match_sequences(test_sequence:str, sequences:List, pdb_code:str, mhc_class:s
     i = 0
     best_score = 0
     best_match = None
+    # iterate through the test sequences of known MHC molecules
     for sequence in sequences:
+        # calculate the match score using the fuzzywuzzy ratio function
         ratio = fuzz.ratio(test_sequence, sequence) / 100
+        # if the match score is better than the previous best match then update the best match
         if ratio > best_score:
             best_score = ratio
             best_match = search_sequences[mhc_class]['labels'][i]
         i += 1
+        # if the match score is 1.0 then we've found an exact match so we can stop looking
         if ratio == 1.0:
             break
+    # return the best match, the match score and the sequence being tested
     return best_match, best_score, test_sequence
 
 
-def match_class_i_sequences(test_sequence:str, pdb_code:str):
+def match_class_i_sequences(test_sequence:str, pdb_code:str) -> Tuple[str, float, str]:
     test_sequence = test_sequence.replace('HHHHHH','')
     if len(test_sequence) < 200:
         match_type = 'truncated'
@@ -199,7 +204,7 @@ def match_class_i_sequences(test_sequence:str, pdb_code:str):
     return best_match, best_score, match_type, altered_sequence
 
 
-def match_cytoplasmic_class_i_sequences(test_sequence:str, pdb_code:str):
+def match_cytoplasmic_class_i_sequences(test_sequence:str, pdb_code:str) -> Tuple[str, float, str]:
     if len(test_sequence) > 280:
         split_sequence = remove_leader_sequence(test_sequence, pdb_code)
         if split_sequence:
@@ -212,13 +217,13 @@ def match_cytoplasmic_class_i_sequences(test_sequence:str, pdb_code:str):
     return best_match, best_score, altered_sequence
 
 
-def match_truncated_class_i_sequences(test_sequence:str, pdb_code:str):
+def match_truncated_class_i_sequences(test_sequence:str, pdb_code:str) -> Tuple[str, float, str]:
     sequences = [sequence[0:180] for sequence in search_sequences['class_i']['sequences']]
     best_match, best_score, altered_sequence = match_sequences(test_sequence, sequences, pdb_code)
     return best_match, best_score, altered_sequence
 
 
-def match_single_chain_construct_class_i_sequences(test_sequence:str, pdb_code:str):
+def match_single_chain_construct_class_i_sequences(test_sequence:str, pdb_code:str) -> Tuple[str, float, str]:
     sequences = search_sequences['class_i']['sequences']
     split_sequence = remove_leader_sequence(test_sequence, pdb_code)
     if split_sequence:
@@ -228,7 +233,7 @@ def match_single_chain_construct_class_i_sequences(test_sequence:str, pdb_code:s
     return best_match, best_score, altered_sequence
 
 
-def match_class_i_start(test_sequence:str):
+def match_class_i_start(test_sequence:str) -> str:
     match = False
     for class_i_start in class_i_starts:
         if class_i_start in test_sequence:
