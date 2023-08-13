@@ -3,6 +3,8 @@ from fetch_stcrdab_info import fetch_stcrdab_info
 from fetch_sabdab_info import fetch_sabdab_info
 from query_localpdb import query_localpdb
 from process_localpdb_query_matches import process_localpdb_query_matches
+from create_core_records import create_core_records
+
 
 steps = {
     '1':{
@@ -45,6 +47,15 @@ steps = {
         'function':process_localpdb_query_matches,
         'title_template':'Processing the output files of the query_localpdb step.',
         'list_item':'Processes the output files of the query_localpdb step.',
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '6':{
+        'function':create_core_records,
+        'title_template':'Creating core records for each structure.',
+        'list_item':'Creates core records for each structure.',
         'is_multi': False,
         'multi_param': None,
         'multi_options': None,
