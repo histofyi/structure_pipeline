@@ -25,14 +25,14 @@ def get_overrides(pipeline_step:str) -> Tuple[Dict, Dict]:
     return (overrides, pdb_overrides)
 
 
-def do_work(new_work:List, action:Callable, facet:str, kwargs) -> Dict:
+def do_work(new_work:List, action:Callable, output_facet:str, input_facet:str=None, kwargs=None) -> Dict:
     """
     This function is used to run a function on a list of data, and return a tuple of lists of successful, unchanged and errored items.
 
     Args:
         new_work (List): A list of data to be processed
         action (Callable): The function to be run on each item in the list
-        facet (str): The name of the facet being processed
+        output_facet (str): The name of the output facet where the data will be stored
 
     Returns:
         Tuple[List, List, List]: A tuple containing lists of successful, unchanged and errored items
@@ -61,12 +61,12 @@ def do_work(new_work:List, action:Callable, facet:str, kwargs) -> Dict:
 
     overrides, pdb_overrides = get_overrides(function_name)
 
-    create_folder(f"{output_path}/structures/{facet}", verbose)
+    create_folder(f"{output_path}/structures/{output_facet}", verbose)
 
     for structure in new_work:
         pdb_code = structure['pdb_code']
 
-        facet_path = get_facet_path(output_path, 'structures', facet, pdb_code)
+        facet_path = get_facet_path(output_path, 'structures', output_facet, pdb_code)
 
         if not force:
             if os.path.exists(facet_path):
@@ -79,7 +79,7 @@ def do_work(new_work:List, action:Callable, facet:str, kwargs) -> Dict:
         if existing_data:
             unchanged.append(pdb_code)
         else:
-            success, output, error = action(**structure.copy())
+            success, output, error = action(input_facet=input_facet, **structure.copy())
             if success:
                 successful.append(pdb_code)
                 write_json(facet_path, output, verbose=verbose, pretty=True)
