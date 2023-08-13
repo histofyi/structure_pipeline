@@ -275,6 +275,8 @@ length_matches = []
 start_matches = {}
 matches_used = []
 
+no_matches = []
+
 collections = {}
 
 
@@ -351,7 +353,6 @@ def query_localpdb(**kwargs):
     restart = []
 
     to_process = [structure for structure in results.index if structure not in restart]
-    
     
 
     j = 0
@@ -435,6 +436,8 @@ def query_localpdb(**kwargs):
                         add_to_matchtype('good', pdb_code, best_score, best_match_slug)
                         if not best_match in matches_used:
                             matches_used.append(best_match)
+                else:
+                    no_matches.append(pdb_code)
                 # increment the unique matches
                 unique_matches.append(unique_key)
             j += 1

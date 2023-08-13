@@ -1,1 +1,1 @@
-STRUCTURE_MATCH_SETS = ['poor_matches', 'possible_matches', 'good_matches', 'excellent_matches', 'exact_matches', 'unique_matches', 'length_matches', 'start_matches','errors']
+STRUCTURE_MATCH_SETS = ['poor_matches', 'possible_matches', 'good_matches', 'excellent_matches', 'exact_matches', 'unique_matches', 'length_matches', 'start_matches','errors', 'no_matches']
