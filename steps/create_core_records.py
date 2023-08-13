@@ -21,20 +21,12 @@ def create_core_record_action(**action_args) -> bool:
 
 
 def create_core_records(**kwargs):
-    verbose = kwargs['verbose']
-    config = kwargs['config']
-    console = kwargs['console']
-    datehash = kwargs['datehash']
-    function_name = kwargs['function_name']
-    output_path = kwargs['output_path']
-    force = kwargs['force']
-
-    facet = 'core'
+    output_facet = 'core'
 
     new_work = read_json(f"assets/overrides/query_localpdb/new_work.json")
 
-    create_folder(f"{output_path}/structures/{facet}", verbose)
+    
 
-    action_output = do_work(new_work, create_core_record_action, facet, kwargs)
+    action_output = do_work(new_work, create_core_record_action, output_facet, kwargs)
 
     return action_output

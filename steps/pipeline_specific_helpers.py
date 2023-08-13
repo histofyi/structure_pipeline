@@ -5,6 +5,8 @@ import os
 
 from helpers.files import read_json, write_json, write_step_tmp_output
 
+from pipeline import create_folder
+
 
 def get_overrides(pipeline_step:str) -> Tuple[Dict, Dict]:
     overrides = None
@@ -59,6 +61,7 @@ def do_work(new_work:List, action:Callable, facet:str, kwargs) -> Dict:
 
     overrides, pdb_overrides = get_overrides(function_name)
 
+    create_folder(f"{output_path}/structures/{facet}", verbose)
 
     for structure in new_work:
         pdb_code = structure['pdb_code']
