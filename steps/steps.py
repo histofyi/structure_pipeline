@@ -2,6 +2,7 @@ from update_localpdb import update_localpdb
 from fetch_stcrdab_info import fetch_stcrdab_info
 from fetch_sabdab_info import fetch_sabdab_info
 from query_localpdb import query_localpdb
+from process_localpdb_query_matches import process_localpdb_query_matches
 
 steps = {
     '1':{
@@ -35,6 +36,15 @@ steps = {
         'function':query_localpdb,
         'title_template':'Querying the local copy of the PDB data.',
         'list_item':'Queries the local copy of the PDB data.',
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '5':{
+        'function':process_localpdb_query_matches,
+        'title_template':'Processing the output files of the query_localpdb step.',
+        'list_item':'Processes the output files of the query_localpdb step.',
         'is_multi': False,
         'multi_param': None,
         'multi_options': None,
