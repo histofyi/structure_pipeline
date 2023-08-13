@@ -6,7 +6,19 @@ from pipeline import create_folder
 
 from helpers.files import read_json, write_json, write_step_tmp_output
 
-from pipeline_specific_helpers import get_facet_path, build_core_record
+from pipeline_specific_helpers import get_facet_path, build_core_record, do_work
+
+
+def create_core_record_action(**action_args) -> bool:
+    pdb_code = action_args['pdb_code']
+
+    data = build_core_record(pdb_code)
+    if data:
+        return True, data, None
+    else:
+        return False, None, ['unable_to_generate_core_record']
+    
+
 
 def create_core_records(**kwargs):
     verbose = kwargs['verbose']
@@ -15,6 +27,7 @@ def create_core_records(**kwargs):
     datehash = kwargs['datehash']
     function_name = kwargs['function_name']
     output_path = kwargs['output_path']
+    force = kwargs['force']
 
     facet = 'core'
 
@@ -22,28 +35,6 @@ def create_core_records(**kwargs):
 
     create_folder(f"{output_path}/structures/{facet}", verbose)
 
-    successful = []
-    errors = []
-
-    for structure in new_work:
-        pdb_code = structure['pdb_code']
-        success = write_json(get_facet_path(output_path, 'structures', facet, pdb_code), build_core_record(pdb_code), verbose)
-        if success:
-            successful.append(pdb_code)
-        else:
-            errors.append({'pdb_code':pdb_code, 'error':'unable_to_create_core_record'})
-
-    raw_output = {
-        'successful':successful,
-        'errors':errors
-    }
-
-    action_output = {
-        'successful':len(successful),
-        'errors':len(errors)
-    }
-
-    # then we write the raw output to a JSON file which we can interrogate later, the datehash matches the pipeline output datehash
-    write_step_tmp_output(config['PATHS']['TMP_PATH'], function_name, raw_output, datehash, verbose=verbose)
+    action_output = do_work(new_work, create_core_record_action, facet, kwargs)
 
     return action_output
