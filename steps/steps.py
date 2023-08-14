@@ -7,6 +7,12 @@ from create_core_records import create_core_records
 from fetch_chronology_data import fetch_chronology_data
 from fetch_title_data import fetch_title_data
 from fetch_experimental_data import fetch_experimental_data
+from fetch_publication_data import fetch_publication_data
+
+
+def stub_function():
+    return None
+
 
 
 steps = {
@@ -90,5 +96,52 @@ steps = {
         'multi_param': None,
         'multi_options': None,
         'has_progress': True
+    },
+    '10':{
+        'function':fetch_publication_data,
+        'title_template':'publication records from PDBe/PMCe for each structure.',
+        'title_verb': ['Fetching','Fetches'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '11':{
+        'function':stub_function,
+        'title_template':'alike chains from localpdb.',
+        'title_verb': ['Mapping','Maps'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '12':{
+        'function':stub_function,
+        'title_template':'the alike chains to specific chain types.',
+        'title_verb': ['Assigning','Assigns'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '13':{
+        'function':stub_function,
+        'title_template':'the coordinates from the PDBe.',
+        'title_verb': ['Fetching','Fetches'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '14':{
+        'function':stub_function,
+        'title_template':'the coordinates from the PDBe.',
+        'title_verb': ['Relettering','Reletters'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
     }
+
+
 }
