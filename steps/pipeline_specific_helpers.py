@@ -8,6 +8,9 @@ from helpers.files import read_json, write_json, write_step_tmp_output
 from pipeline import create_folder
 
 
+from rich.progress import Progress
+
+
 def get_overrides(pipeline_step:str) -> Tuple[Dict, Dict]:
     overrides = None
     pdb_overrides = None
@@ -63,28 +66,31 @@ def do_work(new_work:List, action:Callable, output_facet:str, input_facet:str=No
 
     create_folder(f"{output_path}/structures/{output_facet}", verbose)
 
-    for structure in new_work:
-        pdb_code = structure['pdb_code']
+    with Progress() as progress:
+        task = progress.add_task("[white]Processing...", total=len(new_work))
+        for structure in new_work:
+            pdb_code = structure['pdb_code']
 
-        facet_path = get_facet_path(output_path, 'structures', output_facet, pdb_code)
+            facet_path = get_facet_path(output_path, 'structures', output_facet, pdb_code)
 
-        if not force:
-            if os.path.exists(facet_path):
-                existing_data = read_json(facet_path)
+            if not force:
+                if os.path.exists(facet_path):
+                    existing_data = read_json(facet_path)
+                else:
+                    existing_data = None
             else:
                 existing_data = None
-        else:
-            existing_data = None
 
-        if existing_data:
-            unchanged.append(pdb_code)
-        else:
-            success, output, error = action(input_facet=input_facet, **structure.copy())
-            if success:
-                successful.append(pdb_code)
-                write_json(facet_path, output, verbose=verbose, pretty=True)
+            if existing_data:
+                unchanged.append(pdb_code)
             else:
-                errors.append({'pdb_code':pdb_code, 'error':error})
+                success, output, error = action(input_facet=input_facet, **structure.copy())
+                if success:
+                    successful.append(pdb_code)
+                    write_json(facet_path, output, verbose=verbose, pretty=True)
+                else:
+                    errors.append({'pdb_code':pdb_code, 'error':error})
+            progress.update(task, advance=1)
 
     raw_output = {
         'successful':successful,
