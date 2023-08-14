@@ -4,6 +4,7 @@ from fetch_sabdab_info import fetch_sabdab_info
 from query_localpdb import query_localpdb
 from process_localpdb_query_matches import process_localpdb_query_matches
 from create_core_records import create_core_records
+from fetch_chronology_data import fetch_chronology_data
 
 
 steps = {
@@ -56,6 +57,15 @@ steps = {
         'function':create_core_records,
         'title_template':'Creating core records for each structure.',
         'list_item':'Creates core records for each structure.',
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '7':{
+        'function':fetch_chronology_data,
+        'title_template':'Fetching chronology records from PDBe for each structure.',
+        'list_item':'Fetches chronology records from PDBe for each structure.',
         'is_multi': False,
         'multi_param': None,
         'multi_options': None,
