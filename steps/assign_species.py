@@ -73,7 +73,7 @@ def assign_species_action(**action_args) -> Tuple[bool, Dict, List]:
             print ('')
     else:
         # if the PDBe fetch was not successful, return a tuple containing a boolean indicating failure, a None data object, and a list of errors
-        return (False, None, ['unable_to_fetch_molecules']'])
+        return (False, None, ['unable_to_fetch_molecules'])
 
     # If the species info dictionary contains any species information
     if len(species_info) > 0:
