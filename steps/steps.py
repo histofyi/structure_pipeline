@@ -8,7 +8,7 @@ from fetch_chronology_data import fetch_chronology_data
 from fetch_title_data import fetch_title_data
 from fetch_experimental_data import fetch_experimental_data
 from fetch_publication_data import fetch_publication_data
-
+from find_alike_chains import find_alike_chains
 
 def stub_function():
     return None
@@ -107,7 +107,7 @@ steps = {
         'has_progress': True
     },
     '11':{
-        'function':stub_function,
+        'function':find_alike_chains,
         'title_template':'alike chains from localpdb.',
         'title_verb': ['Mapping','Maps'],
         'is_multi': False,
