@@ -1,9 +1,5 @@
 from typing import Dict, List, Tuple
 
-
-
-from pipeline import create_folder
-
 from helpers.files import read_json, write_json, write_step_tmp_output
 from helpers.dates import parse_pdbdate_to_isoformat
 
