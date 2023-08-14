@@ -9,6 +9,8 @@ from fetch_title_data import fetch_title_data
 from fetch_experimental_data import fetch_experimental_data
 from fetch_publication_data import fetch_publication_data
 from find_alike_chains import find_alike_chains
+from assign_species import assign_species
+
 
 def stub_function():
     return None
@@ -116,8 +118,8 @@ steps = {
         'has_progress': True
     },
     '12':{
-        'function':stub_function,
-        'title_template':'the alike chains to specific chain types.',
+        'function':assign_species,
+        'title_template':'a species to the complex.',
         'title_verb': ['Assigning','Assigns'],
         'is_multi': False,
         'multi_param': None,
@@ -126,6 +128,15 @@ steps = {
     },
     '13':{
         'function':stub_function,
+        'title_template':'the alike chains to specific chain types.',
+        'title_verb': ['Assigning','Assigns'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '14':{
+        'function':stub_function,
         'title_template':'the coordinates from the PDBe.',
         'title_verb': ['Fetching','Fetches'],
         'is_multi': False,
@@ -133,7 +144,7 @@ steps = {
         'multi_options': None,
         'has_progress': True
     },
-    '14':{
+    '15':{
         'function':stub_function,
         'title_template':'the coordinates from the PDBe.',
         'title_verb': ['Relettering','Reletters'],
