@@ -5,6 +5,8 @@ from query_localpdb import query_localpdb
 from process_localpdb_query_matches import process_localpdb_query_matches
 from create_core_records import create_core_records
 from fetch_chronology_data import fetch_chronology_data
+from fetch_title_data import fetch_title_data
+from fetch_experimental_data import fetch_experimental_data
 
 
 steps = {
@@ -65,6 +67,24 @@ steps = {
     '7':{
         'function':fetch_chronology_data,
         'title_template':'chronology records from PDBe for each structure.',
+        'title_verb': ['Fetching','Fetches'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '8':{
+        'function':fetch_title_data,
+        'title_template':'title records from PDBe for each structure.',
+        'title_verb': ['Fetching','Fetches'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '9':{
+        'function':fetch_experimental_data,
+        'title_template':'experimental records from PDBe for each structure.',
         'title_verb': ['Fetching','Fetches'],
         'is_multi': False,
         'multi_param': None,
