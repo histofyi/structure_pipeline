@@ -84,7 +84,10 @@ def do_work(new_work:List, action:Callable, output_facet:str, input_facet:str=No
             if existing_data:
                 unchanged.append(pdb_code)
             else:
-                success, output, error = action(input_facet=input_facet, **structure.copy())
+                structure_kwargs = structure.copy()
+                for kwarg in kwargs:
+                    structure_kwargs[kwarg] = kwargs[kwarg]
+                success, output, error = action(input_facet=input_facet, **structure_kwargs)
                 if success:
                     successful.append(pdb_code)
                     write_json(facet_path, output, verbose=verbose, pretty=True)
