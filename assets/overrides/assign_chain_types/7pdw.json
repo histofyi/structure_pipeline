@@ -1,0 +1,12 @@
+{
+    "AAA": {
+        "chain_type": "tcr_alpha",
+        "matchtype": "override",
+        "subgroup": null
+    },
+    "BBB": {
+        "chain_type": "tcr_beta",
+        "matchtype": "override",
+        "subgroup": null
+    }
+}

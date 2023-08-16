@@ -1,0 +1,12 @@
+{
+    "DDD": {
+        "chain_type": "tcr_alpha",
+        "matchtype": "override",
+        "subgroup": null
+    },
+    "EEE": {
+        "chain_type": "tcr_beta",
+        "matchtype": "override",
+        "subgroup": null
+    }
+}

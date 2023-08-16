@@ -1,0 +1,12 @@
+{
+    "A": {
+        "chain_type": "tcr_alpha",
+        "matchtype": "override",
+        "subgroup": null
+    },
+    "B": {
+        "chain_type": "tcr_beta",
+        "matchtype": "override",
+        "subgroup": null
+    }
+}

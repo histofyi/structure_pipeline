@@ -1,0 +1,12 @@
+{
+    "K": {
+        "chain_type": "tcr_gamma",
+        "matchtype": "override",
+        "subgroup": null
+    },
+    "L": {
+        "chain_type": "tcr_delta",
+        "matchtype": "override",
+        "subgroup": null
+    }
+}
