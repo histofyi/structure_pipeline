@@ -10,11 +10,11 @@ from fetch_experimental_data import fetch_experimental_data
 from fetch_publication_data import fetch_publication_data
 from find_alike_chains import find_alike_chains
 from assign_species import assign_species
+from assign_chain_types import assign_chain_types
 
 
 def stub_function():
     return None
-
 
 
 steps = {
@@ -127,7 +127,7 @@ steps = {
         'has_progress': True
     },
     '13':{
-        'function':stub_function,
+        'function':assign_chain_types,
         'title_template':'the alike chains to specific chain types.',
         'title_verb': ['Assigning','Assigns'],
         'is_multi': False,
