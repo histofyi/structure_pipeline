@@ -39,7 +39,7 @@
         "length":180,
         "range":[-10,10],
         "features":["class", "i", "alpha"],
-        "sequences":[],
+        "sequences":["GPHSMRYFETAVSRPGLGEPRYISVGYVDNKEFVRFDSDAENPRYEPQAPWMEQEGPEYWERITQIAKGQEQWFRVNLRTLLGYYNQSAGGTHTLQWMYGCDVGSDGRLLRGYEQFAYDGCDYIALNEDLKTWTAADMAAQITRRKWEQAGAAEYYRAYLEGECVEWLHRYLKNG"],
         "label":"truncated_class_i_alpha",
         "ui_text":"Class I alpha (truncated)",
         "webglcolor":"0x77DDBB"
@@ -304,6 +304,42 @@
         "non-classical":true,
         "homologue":"class_i_alpha",
         "ui_text":"MR1",
+        "webglcolor":"0x666666"
+    },
+    "mill2":{
+        "length":275,
+        "range":[-25,10],
+        "features":["class i-related"],
+        "sequences":["RTHTLRYNVRAHSLEGSEKTQLLVLIYVDEELFLKYNGDSRETEPLGCWIKGHGGNETCARETNNLLKVEEKLRGMMAEVINQKSQEEGLHTLQATLGCELLSNGSTRGFWHLGYDGQNFLTFDQKTLTWTVDGPSTQQNKMFWKTHAPRADLVKTFLDDICPAHLQRYLASLRNGLQDTGPPMVTVTCRNYPVGRVTLTCRAFNLYTREATLVWLQDGKPVQQKTFRSETILPSGDGTYQARVSIRVLPGQEPQFSCNLRHGNHSIMQTAVSGH"],
+        "key_term":"mill2",
+        "label":"mill2",
+        "non-classical":true,
+        "homologue":"class_i_alpha",
+        "ui_text":"MILL2",
+        "webglcolor":"0x666666"
+    },
+    "ulbp3":{
+        "length":275,
+        "range":[-25,10],
+        "features":["class i-related"],
+        "sequences":["DAHSLWYNFTIIHLPRHGQQWCEVQSQVDQKNFLSYDCGSDKVLSMGHLEEQLYATDAWGKQLEMLREVGQRLRLELADTELEDFTPSGPLTLQVRMSCECEADGYIRGSWQFSFDGRKFLLFDSNNRKWTVVHAGARRMKEKWEKDSGLTTFFKMVSMRDCKSWLRDFLMHRKKRLEPTAPPTMAPGLAQPKAIATTLSPWSFLIILCFILPGI"],
+        "key_term":"ulbp3",
+        "label":"ulbp3",
+        "non-classical":true,
+        "homologue":"class_i_alpha",
+        "ui_text":"ULBP3",
+        "webglcolor":"0x666666"
+    },
+    "ulbp6":{
+        "length":275,
+        "range":[-25,10],
+        "features":["class i-related"],
+        "sequences":["DPHSLCYDITVIPKFRPGPRWCAVQGQVDEKTFLHYDCGNKTVTPVSPLGKKLNVTMAWKAQNPVLREVVDILTEQLLDIQLENYTPKEPLTLQARMSCEQKAEGHSSGSWQFSIDGQTFLLFDSEKRMWTTVHPGARKMKEKWENDKDVAMSFHYISMGDCIGWLEDFLMGMDSTLEPSAGAPLAMSSGTTQLRATATTLILCCLLIILPCFILPGI"],
+        "key_term":"ulbp6",
+        "label":"ulbp6",
+        "non-classical":true,
+        "homologue":"class_i_alpha",
+        "ui_text":"ULBP6",
         "webglcolor":"0x666666"
     },
     "h2_m3":{
