@@ -70,6 +70,10 @@ def do_work(new_work:List, action:Callable, output_facet:str, input_facet:str=No
 
     create_folder(f"{output_path}/structures/{output_facet}", verbose)
 
+    ignore_structures = read_json("assets/overrides/query_localpdb/ignore_structures.json")
+
+    new_work = [structure for structure in new_work if structure['pdb_code'] not in ignore_structures]
+
     with Progress() as progress:
         task = progress.add_task("[white]Processing...", total=len(new_work))
         for structure in new_work:
