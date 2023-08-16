@@ -62,7 +62,11 @@ def do_work(new_work:List, action:Callable, output_facet:str, input_facet:str=No
     errors = []
     applied_overrides = []
 
-    overrides, pdb_overrides = get_overrides(function_name)
+    try:
+        overrides, pdb_overrides = get_overrides(function_name)
+    except:
+        overrides = None
+        pdb_overrides = None
 
     create_folder(f"{output_path}/structures/{output_facet}", verbose)
 
