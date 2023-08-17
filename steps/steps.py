@@ -11,6 +11,7 @@ from fetch_publication_data import fetch_publication_data
 from find_alike_chains import find_alike_chains
 from assign_species import assign_species
 from assign_chain_types import assign_chain_types
+from assign_complex_type import assign_complex_type
 
 
 def stub_function():
@@ -136,6 +137,24 @@ steps = {
         'has_progress': True
     },
     '14':{
+        'function':assign_complex_type,
+        'title_template':'the the complex type from the chain types.',
+        'title_verb': ['Assigning','Assigns'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '15':{
+        'function':stub_function,
+        'title_template':'allele numbers from the IPD collection.',
+        'title_verb': ['Assigning','Assigns'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '16':{
         'function':stub_function,
         'title_template':'the coordinates from the PDBe.',
         'title_verb': ['Fetching','Fetches'],
@@ -144,7 +163,7 @@ steps = {
         'multi_options': None,
         'has_progress': True
     },
-    '15':{
+    '17':{
         'function':stub_function,
         'title_template':'the coordinates from the PDBe.',
         'title_verb': ['Relettering','Reletters'],
@@ -152,7 +171,60 @@ steps = {
         'multi_param': None,
         'multi_options': None,
         'has_progress': True
+    },
+    '18':{
+        'function':stub_function,
+        'title_template':'the structure against a canonical structure.',
+        'title_verb': ['Aligning','Aligns'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '19':{
+        'function':stub_function,
+        'title_template':'the peptide in the structure.',
+        'title_verb': ['Characterizing','Charecterizes'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '20':{
+        'function':stub_function,
+        'title_template':'the peptide neighbours.',
+        'title_verb': ['Mapping','Maps'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '20':{
+        'function':stub_function,
+        'title_template':'the sidechain bionding pockes.',
+        'title_verb': ['Mapping','Maps'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '21':{
+        'function':stub_function,
+        'title_template':'the hetatoms.',
+        'title_verb': ['Cleaning','Cleans'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
+    },
+    '22':{
+        'function':stub_function,
+        'title_template':'the structure into components.',
+        'title_verb': ['Splitting','Splits'],
+        'is_multi': False,
+        'multi_param': None,
+        'multi_options': None,
+        'has_progress': True
     }
-
 
 }

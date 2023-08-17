@@ -1,0 +1,784 @@
+{
+	"8345644c4032db3a839a78b3e81bd117265d759b242e9fd3cd5640aa167efd11": {
+		"composition": {
+			"beta2m": 1,
+			"cd8a": 2,
+			"class_i_alpha": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_cd8"
+	},
+	"9f5f61f8841b66dbe5e4961cc06db81eb6a53165a8d1fd2235aedd9c962e68a0": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"peptide": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "class_i_with_peptide_and_alpha_beta_tcr"
+	},
+	"9a9dbbd4ff23cb6cd64774c0a565e51f1427db9533eb73ef67d3967ad3f94613": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide"
+	},
+	"7053d761bfae6b766a0d380f4fb5f7d065e024a180ac72d849c58d8fc150096b": {
+		"composition": {
+			"mica": 1
+		},
+		"label": "mica"
+	},
+	"2fe616eff5b9c092f665c95e4cbcc336089623090271d9beb0ba80f42632a7ee": {
+		"composition": {
+			"beta2m": 1,
+			"h2-t22": 1
+		},
+		"label": "h2-t22"
+	},
+	"fb02aca12130f97208d2caf1ea9eb3f216acffa69e35544bede7833c0a2b431b": {
+		"composition": {
+			"beta2m": 1,
+			"cd1d1": 1
+		},
+		"label": "cd1d1"
+	},
+	"4b4ae61b7d0f8f789eae382d5f51d0c15745be8b7dfbd16d6af4c0cbd1c2d174": {
+		"composition": {
+			"mica": 1,
+			"nkg2d": 2
+		},
+		"label": "mica_with_nkg2d"
+	},
+	"3dffbc8508509a777b2ea57887f1acc9a5b308ee185d48ceb784cfc3570d2468": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"peptide": 1,
+			"us2": 1
+		},
+		"label": "class_i_with_peptide_and_us2"
+	},
+	"69604765c703803c8a074109f988a63638788f03322ac0cbda6b5f87e5d40811": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"ly49c": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_ly49c"
+	},
+	"bf6129135c028eff46554eb97e48db16e82540a4714189514c64aa9d20eacd3e": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"lir1": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_lir1"
+	},
+	"4aa3f309b40254625b8504773cbed1bc1f0e9f1f19e101e222ec280cf61f6262": {
+		"composition": {
+			"beta2m": 1,
+			"h2-t22": 1,
+			"tcr_delta": 1,
+			"tcr_gamma": 1
+		},
+		"label": "h2_22_with_gamma_delta_tcr"
+	},
+	"bfc95aa818548317cfe0f9ed16e4e6c7d19d09a8340160560aa196dbf729d966": {
+		"composition": {
+			"beta2m": 1,
+			"cd1d": 1
+		},
+		"label": "cd1d"
+	},
+	"eb1e8c3e189221b445b207d3d335d364d929f7ee18a7917c47f73fca29cd33f1": {
+		"composition": {
+			"beta2m": 1,
+			"cd1b": 1
+		},
+		"label": "cd1b"
+	},
+	"5a11df2f6631314ae4c184b6083245496ba4331dd665a2afcfebc7bd700e523e": {
+		"composition": {
+			"beta2m": 1,
+			"cd1d1": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "cd1d1_with_alpha_beta_tcr"
+	},
+	"5a0f8a8c7770b9037bee8ac16907e57271132d311303b57954fd44f22bbab67d": {
+		"composition": {
+			"ab_heavy": 1,
+			"ab_light": 1,
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_antibody"
+	},
+	"7a9965eb3253906bfb692cbdc2f2a7e6f1a151b0440c5ab2d133d86eff37c0da": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"e3": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_e3"
+	},
+	"2606fa1b335c890283607b9f3b6b27121fc06bc01d2890cae87103fb73f63635": {
+		"composition": {
+			"beta2m": 2,
+			"class_i_alpha": 2,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide",
+        "check_assignment": true
+	},
+	"fd18003ad88110eb09a64f95816a03582bbfe9e2f1ebdb9e26be51a64b77d163": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"e3-19k": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_e3_19k"
+	},
+	"f0c957f39c25096fbabb08d46085f71dcaf7ce2f04fe662337f9ae16963aca5b": {
+		"composition": {
+			"beta2m": 2,
+			"class_i_alpha": 2,
+			"peptide": 2,
+			"tcr_alpha": 1,
+			"tcr_beta": 2
+		},
+		"label": "class_i_with_peptide_and_alpha_beta_tcr",
+        "check_assignment":true
+	},
+	"ded20da454d64a3e1a3edc0303126a6d4aad4b33c361ce743828fe769429d75e": {
+		"composition": {
+			"beta2m": 1,
+			"cd1c": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "cd1c_with_alpha_beta_tcr"
+	},
+	"10136ce9ed4aec9273c67323eaa2bac39850fcd24445f6eda80b94c942ba90f5": {
+		"composition": {
+			"beta2m": 1,
+			"cd1c": 1
+		},
+		"label": "cd1c"
+	},
+	"3c0fda67b8a6ed6104ac3987400643098fd25f02e84217ba66bd767bb2d9c0f9": {
+		"composition": {
+			"class_i_alpha": 1,
+			"tcr_delta": 1,
+			"tcr_gamma": 1
+		},
+		"label": "class_i_with_gamma_delta_tcr"
+	},
+	"54ba3f0e2c24dacc08c0d165e6ce29066657766004e2970e1a3dd7001f92cfb1": {
+		"composition": {
+			"ab_heavy": 1,
+			"ab_light": 1,
+			"beta2m": 1,
+			"fcrn": 1
+		},
+		"label": "fcrn_with_antibody"
+	},
+	"6fa3b825c2b965ac66b6c7e17aa9b4684e4ea7617d63bad362d244f1cb5d537a": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1
+		},
+		"label": "class_i_without_discernable_peptide"
+	},
+	"f070ca1fe75981c58ceffda304a8ec7dabe2e9f84d19d2e31b5b2b45a02e9933": {
+		"composition": {
+			"beta2m": 1,
+			"cd3_delta": 1,
+			"cd3_epsilon": 2,
+			"cd3_gamma": 1,
+			"cd3_zeta": 2,
+			"class_i_alpha": 1,
+			"peptide": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "class_i_with_peptide_and_full_alpha_beta_tcr_complex"
+	},
+	"c002fcab2cb94d0c828996da34480c38418df722fc04fa341f17d455179f2236": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"erp57": 1,
+			"tapasin": 1
+		},
+		"label": "class_i_with_erp57_and_tapasin"
+	},
+	"c57dfce8713e03cfc53e4e56222d13ffd38c309ace6e37a01d91b3cdc2a81dec": {
+		"composition": {
+			"ab_heavy": 1,
+			"class_i_alpha": 1
+		},
+		"label": "single_chain_class_i_construct_with_antibody_heavy_chain"
+	},
+	"b38699a7ae42e3f74f8d5f5c6b2256c5b3e7ec0a7f7326fdcfa1bb7a82c45321": {
+		"composition": {
+			"beta2m": 1,
+			"hfe2": 1
+		},
+		"label": "hfe2"
+	},
+	"720886906e2cb8710832b1afb010bcc5f61c927368b00eb4f709ca48316a825b": {
+		"composition": {
+			"beta2m": 1,
+			"hfe2": 1,
+			"transferrin_receptor": 1
+		},
+		"label": "hfe2_with_transferrin_receptor"
+	},
+	"099d247bee5a1ed57192e63ed72e3a171e55d381885f79a41db8f3faf89622bc": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"kir": 2,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_kir"
+	},
+	"89160bfa251cddf773c8a3e0bee3b91119f0d45fdfe8f6f403faaabffa454942": {
+		"composition": {
+			"beta2m": 1,
+			"fcrn": 1
+		},
+		"label": "fcrn"
+	},
+	"b323a1b232102073916933f70996e10dcb6034cf4fb1dc80fcb09a3e671f8bbc": {
+		"composition": {
+			"beta2m": 2,
+			"class_i_alpha": 2,
+			"kir": 1,
+			"peptide": 2
+		},
+		"label": "class_i_with_peptide_and_kir",
+        "check_assignment":true
+	},
+	"04d0c2962fb15d60ef7acdb0a3b5b22896cf3f6d2c816171063687bf1835176f": {
+		"composition": {
+			"nkg2d": 2,
+			"ulbp3": 1
+		},
+		"label": "ulbp3_with_nkg2d"
+	},
+	"66acfe2167aaf2c8f9bac18efa1f05709accb54585a7cb3ef54c45596300916b": {
+		"composition": {
+			"beta2m": 1,
+			"cd1a": 1
+		},
+		"label": "cd1a"
+	},
+	"e5050de4938a74c3718d6b9cb3d5b20af74f60fc0229b27f8225c8e009c3917b": {
+		"composition": {
+			"zag": 1
+		},
+		"label": "zag"
+	},
+	"c402d7ede46b69963b81a97a64c1a248f433a12d210c7d72663f53480f0af9be": {
+		"composition": {
+			"beta2m": 1,
+			"peptide": 1,
+			"truncated_class_i_alpha": 1
+		},
+		"label": "truncated_class_i_alpha_with_peptide"
+	},
+	"cb6b3dd60d68340c5b4908d41eece9b4f0300a31ec4c4bf583ce9cced64a4b93": {
+		"composition": {
+			"class_i_alpha": 1,
+			"peptide": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "class_i_with_peptide_and_alpha_beta_tcr"
+	},
+	"cb5beb87d6c5569b58e352d61e52c728e1394020e1ad8e9f57ab833d83b9dfcc": {
+		"composition": {
+			"peptide": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1,
+			"truncated_class_i_alpha": 1
+		},
+		"label": "truncated_class_i_with_peptide_and_alpha_beta_tcr"
+	},
+	"b168137bbd1fd65b6721fa08ceb6ee1cb87c696dad6a57f9456beaeedff2b5a5": {
+		"composition": {
+			"beta2m": 1,
+			"cd1d": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "cd1d_with_alpha_beta_tcr"
+	},
+	"16fcef88405567ade2597ad226c5d4cf3e04e49383f64c3c2ade337bdcf0788b": {
+		"composition": {
+			"class_i_alpha": 1
+		},
+		"label": "class_i_alpha",
+        "check_assignment":true
+	},
+	"e96fed0292b725ef980b7ff98edd85bd269a5f88fe74f7d6dacfcc8becd0f28b": {
+		"composition": {
+			"hcmv_ul18": 1,
+			"mica": 1
+		},
+		"label": "mica_with_ul18"
+	},
+	"bc708b445b3690dc7b5da860f1464cb3777b77775ac7fbf51f32e31bf612d1a0": {
+		"composition": {
+			"beta2m": 1,
+			"cd94": 1,
+			"class_i_alpha": 1,
+			"nkg2a": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_nkg2a_cd94"
+	},
+	"0f492d36fd39f8fe2e179fe81086b2b4a5a03632351d415b9d90f2e1dffd557b": {
+		"composition": {
+			"peptide": 1,
+			"truncated_class_i_alpha": 1
+		},
+		"label": "truncated_class_i_alpha_with_peptide"
+	},
+	"339b8d7127348a6180b371eff5aa4776457eef6339f2cb69fc14eb8d6849d610": {
+		"composition": {
+			"pip": 1,
+			"zag": 1
+		},
+		"label": "zag_with_pip"
+	},
+	"34315519f4c761a0fe8ed95e378843d60a1262e7dda969f75fc7081ce27fa1f9": {
+		"composition": {
+			"beta2m": 1,
+			"fcrn": 1,
+			"peptide": 1
+		},
+		"label": "fcrn_with_peptide"
+	},
+	"6eb80a95599eb83fb946d7610ac772bb633a1fadaece88b66a7bfc0af3284f2e": {
+		"composition": {
+			"beta2m": 2,
+			"fcrn": 2,
+			"peptide": 1
+		},
+		"label": "fcrn_with_peptide",
+        "check_assignment":true
+	},
+	"cc2c2502cc1d32990202685c5c393de56715b94633b8b1e471a38da433fbe243": {
+		"composition": {
+			"beta2m": 1
+		},
+		"label": "beta2m",
+        "check_assignment":true
+	},
+	"d26d80847f9075adfba327c2aeedc9d8d36e42ac7bdd9ea063a99dce71d52f3b": {
+		"composition": {
+			"beta2m": 1,
+			"gaga_yf1": 1
+		},
+		"label": "gaga_yf1"
+	},
+	"f9a7fa2e58d9f0c90c4839b2c8b8fa9039ee3b28f9650370eba672ae4d12ccfc": {
+		"composition": {
+			"peptide": 1,
+			"tcr_beta": 2,
+			"truncated_class_i_alpha": 1
+		},
+		"label": "class_i_with_peptide_and_alpha_beta_tcr",
+        "check_assignment":true
+	},
+	"820474da01ea4f5a311fcfc457303ce6a8e54260375fcfd8e584eebe094024e3": {
+		"composition": {
+			"beta2m": 1,
+			"cd1d": 1,
+			"tcr_alpha": 2,
+			"tcr_beta": 2
+		},
+		"label": "cd1d_with_alpha_beta_tcr",
+        "check_assignment":true
+	},
+	"69d72c4d1e36e50628ebc6b2978f16b5c26e7ea6770de13a96c70ccd3c4173c0": {
+		"composition": {
+			"ab_heavy": 1,
+			"ab_light": 1,
+			"beta2m": 1,
+			"cd1d1": 1
+		},
+		"label": "cd1d1_with_antibody"
+	},
+	"1adc09db8bbbcd7e6aab9e008b65c483238da4a5aff29f39104cb57d70df478d": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"kir3": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_kir3"
+	},
+	"d987eb3dcf5ed37200f045c1bb081f3d29802aade16d1ede7e06d7aceed9661b": {
+		"composition": {
+			"beta2m": 1,
+			"mr1": 1
+		},
+		"label": "mr1"
+	},
+	"528d451dc4477c2cd3a6bb51d1bd0f1f843ff9a382a99f1cbba4de8592224143": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"cpxv203": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_cpxv203"
+	},
+	"be6dade5e3dd081e8d465fe0c0f48b31b5cdde1a426fac33d10916361d154628": {
+		"composition": {
+			"beta2m": 1,
+			"fcrn": 1,
+			"serum_albumin": 1
+		},
+		"label": "fcrn_with_serum_albumin"
+	},
+	"bd1ab5d6aa648fd2fcf04d34f76a9786f8f3c783d1b9a28708190777714d29c9": {
+		"composition": {
+			"beta2m": 1,
+			"mr1": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "mr1_with_alpha_beta_tcr"
+	},
+	"f30d89603359aefcd81c0b062303ca5db7cfbc294524e5cfc88495b726d20483": {
+		"composition": {
+			"beta2m": 1,
+			"cd1d": 1,
+			"tcr_delta": 1,
+			"tcr_gamma": 1
+		},
+		"label": "cd1d_with_gamma_delta_tcr"
+	},
+	"fee31861b9c2ad5c3b8963eb06031899cfad0d1c6daa04e79092393eca30d92f": {
+		"composition": {
+			"beta2m": 1,
+			"cd1d": 1,
+			"tcr_delta": 1
+		},
+		"label": "cd1d_with_gamma_delta_tcr",
+        "check_assignment":true
+
+	},
+	"8eb4c1f63ee0fa624e8f27cea0332da53f5abf0f736491d745791ec5f62e9ce9": {
+		"composition": {
+			"beta2m": 1,
+			"fcrn": 1,
+			"ig_gamma_1": 1,
+			"serum_albumin": 1
+		},
+		"label": "fcrn_with_serum_albumin_and_igg"
+	},
+	"8e47acc54840e5491a2e3d5e8b38b108f8bb12f9d9cb7bf143120037dae55aec": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"kir": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_kir"
+	},
+	"554cbc40f8d4ef617a2b6e6382b958a4994fc847502e1f22cb11324cfbf64da5": {
+		"composition": {
+			"nkg2d": 2,
+			"ulbp6": 1
+		},
+		"label": "ulbp6_with_nkg2d"
+	},
+	"909b64c3ecf597ea7096990ea170931e01d118945911f71bb0c9a54a976162d6": {
+		"composition": {
+			"beta2m": 1,
+			"cd1a": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "cd1a_with_alpha_beta_tcr"
+	},
+	"9705855e25aedf84d09eea57222ac6f876cead7afcf0351d7279db3da4ac89cc": {
+		"composition": {
+			"beta2m": 1,
+			"cd1d1": 1,
+			"p99p": 1
+		},
+		"label": "cd1d1_with_lipid_and_p99p"
+	},
+	"959b2575bf3eff320b6f2e7c84f0b78630aecbe2472d2ac5eb8cb07e41fbf109": {
+		"composition": {
+			"beta2m": 1,
+			"cd1b": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "cd1b_with_alpha_beta_tcr"
+	},
+	"66eab08a63ec950cbcf9145c464b6ba59f298d221ee188721b3be4f87fd405e7": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"tapbpr": 1
+		},
+		"label": "class_i_with_tapbpr"
+	},
+	"2ebdf669b382d468cda1a21217dcbd14fb744e24dfdc24ca3e41b6a4772b0fed": {
+		"composition": {
+			"beta2m": 1,
+			"mill2": 1
+		},
+		"label": "mill2"
+	},
+	"109fb081e7657fdb12c3c190f2f4c721183574c94c22811f180ad955981444d3": {
+		"composition": {
+			"beta2m": 1,
+			"cd1d1": 1,
+			"chimeric_tcr_alpha": 1,
+			"chimeric_tcr_beta": 1
+		},
+		"label": "cd1d1_with_chimeric_alpha_beta_tcr"
+	},
+	"7c02a0ddc98dcb9a443a142657ce34555b646122279f357c0b6dc4974361242b": {
+		"composition": {
+			"hybrid_class_i_alpha": 1
+		},
+		"label": "single_chain_class_i_construct"
+	},
+	"4e73eb410086d18b3d0b5af3312ca387d498d234b90db70793b2955beae55d81": {
+		"composition": {
+			"beta2m": 1,
+			"calreticulin": 1,
+			"class_i_alpha": 1,
+			"erp57": 1,
+			"tapasin": 1
+		},
+		"label": "class_i_peptide_loading_complex"
+	},
+	"a98b29b9d6282164da3623a5762f6caa436bb442942f702e60f13b8ff1c5f9d1": {
+		"composition": {
+			"beta2m": 1,
+			"mr1": 1,
+			"tcr_delta": 1,
+			"tcr_gamma": 1
+		},
+		"label": "mr1_with_gamma_delta_tcr"
+	},
+	"e6a3dd1e1d1069c53585d20872c5952da654e2d404f1ec27bc7dc9d69478251c": {
+		"composition": {
+			"beta2m": 1,
+			"fcrn": 1,
+			"serum_albumin": 1,
+			"somatotropin": 1
+		},
+		"label": "fcrn_with_serum_albumin_and_somatotropin"
+	},
+	"926d1f8149a0cd4edbeb9dd833d666e70da2a3d8db90b21e1c6ef69dcb4a3c4a": {
+		"composition": {
+			"ab_heavy": 1,
+			"beta2m": 1,
+			"cd1d": 1
+		},
+		"label": "cd1d1_with_antibody",
+        "check_assignment":true
+	},
+	"1189d756b2658ed7abb01bcbbda8f80eb85fc0d6ef58e96ceac145e7d6c1db22": {
+		"composition": {
+			"beta2m": 1,
+			"cd1d": 1,
+			"nanobody": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "cd1d_with_alpha_beta_tcr_and_nanobody"
+	},
+	"d619a449abcb7031694032d221505ae57f66e62c7686c3551104b488c3247834": {
+		"composition": {
+			"class_i_alpha": 1,
+			"peptide": 1,
+			"pre_tcr_beta": 1
+		},
+		"label": "class_i_with_peptide_and_pre_tcr_beta"
+	},
+	"7a4d20eee7c33590bb918bb6d21967649d70b72b1e901f97b0874e48fb257e0c": {
+		"composition": {
+			"beta2m": 1,
+			"fcrn": 1,
+			"monomeric_igg4": 1
+		},
+		"label": "fcrn_with_monomeric_igg4"
+	},
+	"b7769b788ea6cb9f016a76a512931b49cefc828fe96dbd9c2f68fb1736a79f1b": {
+		"composition": {
+			"beta2m": 1,
+			"fcrn": 1,
+			"ighg1_constant_gamma": 1
+		},
+		"label": "fcrn_with_ighg1_constant_gamma"
+	},
+	"443a58992a0e41db819e13646ab3d9a1076692033e3f92157acdf68675e8f635": {
+		"composition": {
+			"beta2m": 1,
+			"mr1": 1,
+			"tapbpr": 1
+		},
+		"label": "mr1_with_tapbpr"
+	},
+	"c0abe4dce265aee85f266d0052724a431bd4937704a87e9d61bc43714e37cb92": {
+		"composition": {
+			"beta2m": 1,
+			"cd1a": 1,
+			"tcr_delta": 1,
+			"tcr_gamma": 1
+		},
+		"label": "cd1a_with_gamma_delta_tcr"
+	},
+	"a42abe026cc7ab4b980d4b6c451ad078c0c0d422a185da5d897b89cfe4269a05": {
+		"composition": {
+			"ab_heavy": 1,
+			"beta2m": 1
+		},
+		"label": "beta2m_with_antibody_heavy_chain",
+        "check_assignment":true
+	},
+	"bef169fc84836f0f864ed3758b0ecb088a8a92f29960d851264605b8f59b1928": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"tapasin": 1
+		},
+		"label": "class_i_with_tapasin"
+	},
+	"395efb77185dda3692bdc7e343bc58918a32e8861d5cce581d0dbef9846ef561": {
+		"composition": {
+			"beta2m": 1,
+			"cd8a": 2,
+			"mr1": 1
+		},
+		"label": "mr1_with_cd8"
+	},
+	"27ad3d59548bd8b2dd96ad70106567b552db439fc7e0911ac28dba6f40062e02": {
+		"composition": {
+			"beta2m": 1,
+			"h2_m3": 1,
+			"peptide": 1
+		},
+		"label": "h2_m3_with_peptide"
+	},
+	"8bb4d3d0e441a20886adc8de631df6c2badce84139568b01e84c203cb1805288": {
+		"composition": {
+			"beta2m": 1,
+			"cd8a": 2,
+			"h2_t3": 1
+		},
+		"label": "h2_t3_with_cd8"
+	},
+	"e07cdd31c8c9e58f8bdfe50b9c8c9a30ba7ddeca1922d6b8298fa2ab00933bca": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"ly49a": 2,
+			"peptide": 1
+		},
+		"label": "class_i_with_peptide_and_ly49a"
+	},
+	"48a8408dc05f51fb5406b8a71550e77243a0be4c2974a3c51d70395cdb0986b8": {
+		"composition": {
+			"beta2m": 1,
+			"cd8a": 1,
+			"cd8b": 1,
+			"class_i_alpha": 1,
+			"peptide": 1
+		},
+		"label": "class_i_with_cd8"
+	},
+	"e31aeb1440e9f3cdcf82b577fb64bc8f714a06a5a259bd5e8f38da7f72166fc3": {
+		"composition": {
+			"mr1": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "mr1_with_alpha_beta_tcr"
+	},
+	"a3078546472a87070a64d3d461906535679836b897e65d22a862071db9ef7c1f": {
+		"composition": {
+			"beta2m": 1,
+			"class_i_alpha": 1,
+			"tcr_alpha": 1,
+			"tcr_beta": 1
+		},
+		"label": "class_i_with_alpha_beta_tcr",
+        "check_assignment":true
+	},
+    "e08e2b43da0a7a223e8a888552120e7dc5a90aa88a092873dc15f4d4f38d86f5": {
+        "composition": {
+            "single_chain_class_i_construct": 1
+        },
+        "label": "single_chain_class_i_construct"
+    },
+    "0343ed14526213c57a105207b00000680f021d134668b784725dfcc4aa9c4818": {
+        "composition": {
+            "cd1c": 1
+        },
+        "label": "cd1c"
+    },
+    "b1d9bf501f500f591cfa82369791e86c5c928319f6acbcb24e5d2d9080b0431b": {
+        "composition": {
+            "cd1e": 1
+        },
+        "label": "cd1e"
+    },
+    "6d2ec9e27e6ec46f9696ce22e14fbb3ad350208ea3eb1fbc5041d060649edf5e": {
+        "composition": {
+            "beta2m": 1, 
+            "cd1d": 1, 
+            "nanobody": 1
+        },
+        "label": "cd1d_with_a_nanobody"
+    },
+	"43f19b41808fc33f4eb3381eab19e853f1e15740cc09bca6b73a10f277a554e4": {
+		"composition": {
+			"beta2m": 1, 
+			"cd1d": 1, 
+			"gamma_delta_single_chain_tcr_construct": 1
+		},
+		"label": "cd1d_with_gamma_delta_single_chain_tcr_construct"
+	},
+	"963eb47c3ed1e8d0d43ebc089547d83198b11ecfdf4be0572e649617790ab48a": {
+		"composition": {
+			"ab_heavy": 1, 
+			"single_chain_class_i_construct": 1
+		},
+		"label": "single_chain_class_i_construct_with_antibody_heavy_chain"
+	},
+	"030785b875e39db7ca5924c64193ca946804711c5c3891dcb26e8c6f07bbeaf6":{
+		"composition":{
+			"single_chain_class_i_construct": 1, 
+			"tcr_alpha": 1, 
+			"tcr_beta": 1
+		},
+		"label": "single_chain_class_i_construct_with_alpha_beta_tcr"
+
+	}
+
+}
