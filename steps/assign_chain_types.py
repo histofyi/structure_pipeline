@@ -122,26 +122,18 @@ def assign_chain_types_action(**action_args) -> Tuple[bool, Dict, List]:
         if assignment:
             assigned_chains[chain] = assignment
 
+    override = f"assets/overrides/assign_chain_types/{pdb_code}.json"
+    if os.path.exists(override):
+        override_info = read_json(override)
+        for chain in override_info:
+            assigned_chains[chain] = override_info[chain]
 
     unassigned_chains = list_unassigned_chains(alike_chains, assigned_chains)
-
-    if len(unassigned_chains) > 0:
-        
-
-        override = f"assets/overrides/assign_chain_types/{pdb_code}.json"
-        if os.path.exists(override):
-            override_info = read_json(override)
-            print (override_info)
-            for chain in override_info:
-                assigned_chains[chain] = override_info[chain]
-            unassigned_chains = list_unassigned_chains(alike_chains, assigned_chains)
-
 
     if len(unassigned_chains) > 0:
         print (pdb_code)
         print (action_args['matched_to'])
         print (unassigned_chains)
-        print (assigned_chains)
   
         errors = []
         for chain in unassigned_chains:
@@ -165,8 +157,6 @@ def assign_chain_types(**kwargs):
     output_facet = 'chain_types'
 
     new_work = read_json(f"assets/overrides/query_localpdb/new_work.json")
-
-    #new_work = new_work[:500]
 
     chain_type_tests = read_json(f"assets/sequences/chain_type_tests.json")
 

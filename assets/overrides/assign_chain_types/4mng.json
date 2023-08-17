@@ -1,0 +1,7 @@
+{
+    "E": {
+        "chain_type": "gamma_delta_single_chain_tcr_construct",
+        "matchtype": "override",
+        "subgroup": null
+    }
+}
