@@ -1,0 +1,13 @@
+{
+    "remap": {
+        "sequences": {
+            "I": "XRFXTGHFGGLYPCKX"
+        },
+        "chains": {
+            "I": [
+                "I",
+                "J"
+            ]
+        }
+    } 
+}

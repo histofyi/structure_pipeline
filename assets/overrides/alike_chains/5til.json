@@ -1,0 +1,18 @@
+{
+    "remap": {
+        "sequences": {
+            "G": "QQKEKHDQQQVRQSPQSLTVWEGGTTVLTCSYEDSTFNYFPWYQQFPGEGPALLISILSVSDKKEDGRFTTFFNKREKKLSLHIIDSQPGDSATYFCAALYGNEKITFGAGTKLTIKPNIQNPEPAVYQLKDPRSQDSTLCLFTDFDSQINVPKTMESGTFITDKCVLDMKAMDSKSNGAIAWSNQTSFTCQDIFKETNATYPSS"
+        },
+        "chains": {
+            "G": [
+                "G",
+                "K"
+            ]
+        }
+    },
+    "exclude": {
+        "5til_K": [
+            "K"
+        ]
+    } 
+}

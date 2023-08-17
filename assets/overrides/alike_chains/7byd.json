@@ -1,0 +1,13 @@
+{
+    "remap": {
+        "sequences": {
+            "C": "GGAI"
+        },
+        "chains": {
+            "C": [
+                "C",
+                "H"
+            ]
+        }
+    } 
+}

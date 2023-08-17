@@ -3,6 +3,7 @@ from typing import Dict, List, Tuple, Union
 from localpdb import PDB
 from fuzzywuzzy import fuzz
 
+import os
 
 from helpers.files import read_json, write_json, write_step_tmp_output
 
@@ -117,12 +118,33 @@ def find_alike_chains_action(**action_args) -> Tuple[bool, Dict, List]:
     pdb_code = action_args['pdb_code']
     all_chains = action_args['all_chains']
     verbose = action_args['verbose']
+    override_info = None
 
     # Get a list of the chains in the structure, each of these items is of the format 'pdb_code_chain_label' e.g. '1abc_A'
     structure_chains = [chain for chain in all_chains.loc[all_chains['pdb'] == pdb_code].index]
 
+    override = f"assets/overrides/alike_chains/{pdb_code}.json"
+    if os.path.exists(override):
+        override_info = read_json(override)
+
+    exclusion_used = False
+    # DO THE EXCLUSION HERE
+    if override_info:
+        if 'exclude' in override_info:
+            exclusion_used = True
+            structure_chains = [chain for chain in structure_chains if chain not in override_info['exclude']]
+            if verbose:
+                print (pdb_code)
+                print ('excluded')
+                print (override_info['exclude'])
+                print (structure_chains)
+
+
+
     # Get the sequences of the chains in the structure
     structure_sequences = [all_chains.loc[chain]['sequence'] for chain in structure_chains]
+
+
     # Get the labels of the chains in the structure that are of the format 'chain_label' e.g. 'A' by splitting the chain labels on the underscore
     chain_labels = [chain.split('_')[1] for chain in structure_chains]
 
@@ -131,7 +153,6 @@ def find_alike_chains_action(**action_args) -> Tuple[bool, Dict, List]:
     
     # Get the number of chains in the structure
     found_chain_count = len(chain_list)
-
 
     # now start processing the data
     # first, find the chains that are similar to each other
@@ -142,12 +163,28 @@ def find_alike_chains_action(**action_args) -> Tuple[bool, Dict, List]:
 
     # then, reorganize the similar chains and unique chains into a dictionary
     chain_dictionary = reorganize_array(similar_chains, unmatched_chains)
+    structure_sequences = {chain_label: structure_sequences[chain_labels.index(chain_label)] for chain_label in chain_dictionary.keys()}
+
+    remapping_used = False
+    # DO THE REMAPPING HERE
+    if override_info:
+        if 'remap' in override_info:
+            remapping_used = True
+            for chain in override_info['remap']['chains']:
+                chain_dictionary[chain] = override_info['remap']['chains'][chain]
+                structure_sequences[chain] = override_info['remap']['sequences'][chain]
+            if verbose:
+                print (pdb_code)
+                print ('remapped')
+                print (override_info['remap'])
+                print (chain_dictionary)
+                print (structure_sequences)
 
     # then, get the total number of matched chains
     matched_chain_count = sum(len(values) for values in chain_dictionary.values())
 
-    # if the total number of matched chains is the same as the number of chains found in the structure
-    if matched_chain_count == found_chain_count:
+    # if the total number of matched chains is the same as the number of chains found in the structure, this wouldn't be the case if we've used a remapping in an override file
+    if matched_chain_count == found_chain_count or remapping_used:
         # build the alike chains dictionary
         alike_chains = {
             'chains': chain_dictionary,
@@ -155,7 +192,9 @@ def find_alike_chains_action(**action_args) -> Tuple[bool, Dict, List]:
             'assembly_count': min(len(values) for values in chain_dictionary.values()),
             'total_chain_counts': matched_chain_count,
             'raw_similarity': similar_chains,
-            'chain_sequences': {chain_label: structure_sequences[chain_labels.index(chain_label)] for chain_label in chain_dictionary.keys()}
+            'chain_sequences': structure_sequences,
+            'remapping_used': remapping_used,
+            'exclusion_used': exclusion_used
         }
     else:
         # else create an empty alike chains dictionary
@@ -205,4 +244,3 @@ def find_alike_chains(**kwargs):
     return action_output
 
     
-        
