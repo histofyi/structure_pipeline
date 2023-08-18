@@ -12,6 +12,7 @@ from find_alike_chains import find_alike_chains
 from assign_species import assign_species
 from assign_chain_types import assign_chain_types
 from assign_complex_type import assign_complex_type
+from assign_allele_number import assign_allele_number
 
 
 def stub_function():
@@ -146,7 +147,7 @@ steps = {
         'has_progress': True
     },
     '15':{
-        'function':stub_function,
+        'function':assign_allele_number,
         'title_template':'allele numbers from the IPD collection.',
         'title_verb': ['Assigning','Assigns'],
         'is_multi': False,
