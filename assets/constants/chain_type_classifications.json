@@ -1,0 +1,32 @@
+{
+    "class_i": {
+        "classical":[
+            "class_i_alpha",
+            "hybrid_class_i_alpha",
+            "truncated_class_i_alpha",
+            "single_chain_class_i_construct"
+        ],
+        "nonclassical":[
+            "cd1a",
+            "cd1b",
+            "cd1c",
+            "cd1d",
+            "cd1d1",
+            "cd1d2",
+            "cd1e",
+            "fcrn",
+            "gaga_yf1",
+            "hfe2",
+            "h2_m3",
+            "h2_t3",
+            "h2-t22",
+            "mica",
+            "micb",
+            "mill2",
+            "mr1",
+            "ulbp3",
+            "ulbp6",
+            "zag"
+        ]
+    }
+}
