@@ -264,7 +264,7 @@ def assign_allele_number(**kwargs):
     config = kwargs['config']
     verbose = kwargs['verbose']
 
-    output_facet = ''
+    output_facet = 'allele'
 
     species_loci = read_json(f"assets/constants/species_loci.json")
 
