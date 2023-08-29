@@ -105,6 +105,8 @@ def assign_allele_number_action(**action_args) -> Tuple[bool, Dict, List]:
     verbose = action_args['verbose']
     output_path = action_args['output_path']
 
+    errors = []
+
     # get the loci sequences and loci alleles from the action_args
     loci_sequences = action_args['loci_sequences']
     loci_alleles = action_args['loci_alleles']
@@ -215,7 +217,7 @@ def assign_allele_number_action(**action_args) -> Tuple[bool, Dict, List]:
         print ('NOT IN CLASSICAL OR NONCLASSICAL')
         print (chain_type_list)
         print (species)
-        errors = ['not in classical or nonclassical']
+        errors = ['not_in_classical_or_nonclassical']
 
     
     print ('')
@@ -225,7 +227,11 @@ def assign_allele_number_action(**action_args) -> Tuple[bool, Dict, List]:
     if found_match:
         return (True, found_match, None)
     else:
-        return (False, None, ['unable to do something'])
+
+        if len(errors) == 0:
+            errors = ['unable_to_assign_allele_number']
+
+        return (False, None, errors)
 
 
 def load_sequences(config, species_loci):
