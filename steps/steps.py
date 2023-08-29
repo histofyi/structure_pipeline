@@ -202,7 +202,7 @@ steps = {
     },
     '20':{
         'function':stub_function,
-        'title_template':'the sidechain binding pockes.',
+        'title_template':'the sidechain binding pockets.',
         'title_verb': ['Mapping','Maps'],
         'is_multi': False,
         'multi_param': None,
