@@ -13,7 +13,7 @@ from assign_species import assign_species
 from assign_chain_types import assign_chain_types
 from assign_complex_type import assign_complex_type
 from assign_allele_number import assign_allele_number
-
+from fetch_coordinates import fetch_coordinates
 
 def stub_function():
     return None
@@ -156,7 +156,7 @@ steps = {
         'has_progress': True
     },
     '16':{
-        'function':stub_function,
+        'function':fetch_coordinates,
         'title_template':'the coordinates from the PDBe.',
         'title_verb': ['Fetching','Fetches'],
         'is_multi': False,
