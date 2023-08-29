@@ -1,4 +1,5 @@
 from typing import Dict, List, Tuple
+import os
 
 from rich.progress import Progress
 
@@ -26,8 +27,19 @@ def process_localpdb_query_matches(**kwargs):
     previous_step_output = read_json(f"{config['PATHS']['TMP_PATH']}/steps/{previous_step}/output-{datehash}.json")
 
     ignore_structures = read_json(f"assets/overrides/{previous_step}/ignore_structures.json")
-    known_matches = read_json(f"assets/overrides/{previous_step}/known_matches.json")
-    ignore_matches = read_json(f"assets/overrides/{previous_step}/ignore_matches.json")
+
+    known_matches_filename = f"assets/overrides/{previous_step}/known_matches.json"
+    if os.path.exists(known_matches_filename):
+        known_matches = read_json(known_matches_filename)
+    else:
+        known_matches = []
+
+    ignore_matches_filename = f"assets/overrides/{previous_step}/ignore_matches.json"
+    if os.path.exists(ignore_matches_filename):
+        ignore_matches = read_json(ignore_matches_filename)
+    else:
+        ignore_matches = []
+    
     new_work = []
 
     for collection in ['exact_matches', 'excellent_matches', 'good_matches']:
